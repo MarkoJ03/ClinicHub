@@ -1,0 +1,48 @@
+# ===== IGNORE SVE VAN BACKENDA =====
+/.metadata/
+/.idea/
+/.vscode/
+/build/
+/target/
+/out/
+/.gradle/
+/mvnw
+/mvnw.cmd
+/gradlew
+/gradlew.bat
+/coverage/
+/reports/
+/*.mwb
+/*.asta
+/*.txt
+/*.log
+/*.tmp
+/*.bak
+
+# ===== IGNORIŠI PRIVREMENE I OS FAJLOVE =====
+.DS_Store
+Thumbs.db
+
+# ===== IGNORIŠI SPRING KONFIGURACIONE FAJLOVE (ako su u backendu) =====
+clinichub-backend/src/main/resources/application*.yml
+clinichub-backend/src/main/resources/application*.properties
+
+# ===== IDE SPECIFIČNI FAJLOVI UNUTAR BACKENDA =====
+clinichub-backend/.idea/
+clinichub-backend/.vscode/
+clinichub-backend/.metadata/
+clinichub-backend/.settings/
+clinichub-backend/*.iml
+clinichub-backend/*.ipr
+clinichub-backend/*.iws
+
+# ===== BUILD OUTPUT UNUTAR BACKENDA =====
+clinichub-backend/target/
+clinichub-backend/build/
+clinichub-backend/out/
+
+# ===== OSTALO =====
+*.pid
+*.swp
+*.swo
+*.txt
