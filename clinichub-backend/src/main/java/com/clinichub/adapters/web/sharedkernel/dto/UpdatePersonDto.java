@@ -1,10 +1,13 @@
+
 package com.clinichub.adapters.web.sharedkernel.dto;
 
 public record UpdatePersonDto(
- Long id,
- String firstName,
- String lastName,
- String email,
- String phone,
- AddressDTO address
+    String firstName,
+    String lastName,
+    String email,
+    String phone,
+    String street,
+    String number,
+    String zip,
+    Long cityId
 ) {}

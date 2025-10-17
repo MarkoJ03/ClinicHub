@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.clinichub.core.sharedkernel.port.PersonRepository;
 import com.clinichub.core.sharedkernel.usecase.CreatePerson;
+import com.clinichub.core.sharedkernel.usecase.DeletePerson;
 import com.clinichub.core.sharedkernel.usecase.UpdatePerson;
 import com.clinichub.core.sharedkernel.usecase.GetPerson;
 import com.clinichub.core.sharedkernel.usecase.ListPersons;
@@ -35,6 +36,7 @@ import com.clinichub.shared.mappers.CityMapper;
 public class UseCaseConfig {
 	
 	// Person use cases
+    @Bean DeletePerson deletePerson(PersonRepository repo) { return new DeletePerson(repo); } // NOVO
 
     @Bean CreatePerson createPerson(PersonRepository repo) { return new CreatePerson(repo); }
 
