@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "contry")
+@Table(name = "country")
 @Data
 @Builder
 @NoArgsConstructor
@@ -22,6 +22,8 @@ public class CountryJpa {
     @Column(name = "name")
     private String name;
 }
+
+
 
 
 

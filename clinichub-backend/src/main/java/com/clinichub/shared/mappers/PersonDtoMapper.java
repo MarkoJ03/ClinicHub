@@ -1,4 +1,4 @@
-// shared/mappers/PersonDtoMapper.java
+
 package com.clinichub.shared.mappers;
 
 import java.util.Optional;
@@ -24,7 +24,6 @@ public class PersonDtoMapper {
         this.personRepo = personRepo;
     }
 
-    // WRITE (create)
     public CreatePerson.Command toCreateCommand(CreatePersonDto dto) {
         return new CreatePerson.Command(
             dto.firstName(),
@@ -38,7 +37,7 @@ public class PersonDtoMapper {
         );
     }
 
-    // WRITE (update)
+
     public UpdatePerson.Command toUpdateCommand(Long id, UpdatePersonDto dto) {
         return new UpdatePerson.Command(
             new PersonId(id),
@@ -53,7 +52,7 @@ public class PersonDtoMapper {
         );
     }
 
-    // READ iz projekcije
+
     public PersonDto fromView(PersonView v) {
         return new PersonDto(
             v.getId(),
@@ -73,7 +72,7 @@ public class PersonDtoMapper {
         );
     }
 
-    // READ iz domena (fallback obogaćenje)
+
     public PersonDto enrich(Person p) {
         Long cityId = (p.getAddress() != null && p.getAddress().getCityId() != null)
             ? p.getAddress().getCityId().getValue() : null;
