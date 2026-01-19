@@ -14,6 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CityJpa {
     
+    public CityJpa(Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idcity")

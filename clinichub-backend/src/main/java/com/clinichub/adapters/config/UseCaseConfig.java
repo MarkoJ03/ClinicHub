@@ -32,8 +32,29 @@ import com.clinichub.core.reference.port.CityRepository;
 
 import com.clinichub.shared.mappers.CityMapper;
 
+import com.clinichub.core.tenant.port.TenantRepository;
+import com.clinichub.core.tenant.usecase.CreateTenant;
+import com.clinichub.core.tenant.usecase.GetTenant;
+import com.clinichub.core.tenant.usecase.ListTenants;
+import com.clinichub.core.tenant.usecase.UpdateTenant;
+
+
+import com.clinichub.adapters.persistence.tenant.mapper.TenantMapper;
+import com.clinichub.adapters.persistence.tenant.jpa.TenantSpringRepository;
+import com.clinichub.adapters.persistence.tenant.adapter.TenantRepositoryAdapter;
+
 @Configuration
 public class UseCaseConfig {
+
+    // Tenant use cases
+    @Bean TenantRepository tenantRepository(TenantSpringRepository springRepo, TenantMapper mapper) {
+        return new TenantRepositoryAdapter(springRepo, mapper);
+    }
+
+    @Bean CreateTenant createTenant(TenantRepository repo) { return new CreateTenant(repo); }
+    @Bean GetTenant getTenant(TenantRepository repo) { return new GetTenant(repo); }
+    @Bean ListTenants listTenants(TenantRepository repo) { return new ListTenants(repo); }
+    @Bean UpdateTenant updateTenant(TenantRepository repo) { return new UpdateTenant(repo); }
 	
 	// Person use cases
     @Bean DeletePerson deletePerson(PersonRepository repo) { return new DeletePerson(repo); } // NOVO

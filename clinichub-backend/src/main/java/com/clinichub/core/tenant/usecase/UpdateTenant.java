@@ -38,14 +38,13 @@ public class UpdateTenant {
         tenant.changePhone(command.phone());
         tenant.changeAddress(new Address(command.street(), command.number(), command.zip(), command.cityId()));
         tenant.changeLogo(command.logo());
+
+
+        
         return Optional.of(tenantRepository.save(tenant));
 
 
     }
-
-
-
-
 
 
 
